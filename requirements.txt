@@ -1,0 +1,10 @@
+yt-dlp
+streamlit
+youtube-transcript-api
+langchain
+langchain-community
+langchain-openai
+faiss-cpu
+tiktoken
+openai
+requests==2.32.4
