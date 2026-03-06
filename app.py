@@ -79,6 +79,12 @@ st.markdown("""
 # API Key Setup
 # ─────────────────────────────────────────────
 def get_api_key():
+    # Try Streamlit secrets first (for cloud deployment)
+    try:
+        return st.secrets["OPENAI_API_KEY"]
+    except (KeyError, FileNotFoundError):
+        pass
+    # Fall back to .env for local development
     return os.getenv("OPENAI_API_KEY", "")
 
 # ─────────────────────────────────────────────
